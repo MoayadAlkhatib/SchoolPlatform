@@ -6,12 +6,42 @@ import javax.persistence.*;
 public class Person {
 
     @Id
+    @Column(
+            nullable = false,
+            unique = true
+    )
     private String ssn;
+
+    @Column(
+            nullable = false
+    )
     private String name;
+
+    @Column(
+            nullable = false
+    )
     private String surname;
+
+    @Column(
+            nullable = false,
+            unique = true
+    )
     private String email;
+
+    @Column(
+            nullable = false
+    )
     private String password;
+
+    @Column(
+            nullable = false
+    )
     private long role_id;
+
+    @Column(
+            nullable = false,
+            unique = true
+    )
     private String username;
 
     public String getName() {
