@@ -1,10 +1,14 @@
 package se.schoolsystem.SchoolPlatfom.model;
 
+import javax.persistence.*;
+
+@Entity(name="person")
 public class Person {
-    private long person_id;
+
+    @Id
+    private String ssn;
     private String name;
     private String surname;
-    private String ssn;
     private String email;
     private String password;
     private long role_id;
@@ -66,14 +70,10 @@ public class Person {
         this.username = username;
     }
 
-    public long getPerson_id() {
-        return person_id;
-    }
 
     @Override
     public String toString() {
         return "Person{" +
-                "person_id=" + person_id +
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", ssn='" + ssn + '\'' +
