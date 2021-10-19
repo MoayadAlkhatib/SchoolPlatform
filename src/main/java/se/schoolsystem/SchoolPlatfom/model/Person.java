@@ -1,9 +1,10 @@
 package se.schoolsystem.SchoolPlatfom.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity(name="person")
-public class Person {
+public class Person implements Serializable {
 
     @Id
     @Column(
