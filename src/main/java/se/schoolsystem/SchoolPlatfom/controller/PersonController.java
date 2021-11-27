@@ -1,10 +1,7 @@
 package se.schoolsystem.SchoolPlatfom.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import se.schoolsystem.SchoolPlatfom.model.Person;
 import se.schoolsystem.SchoolPlatfom.service.PersonService;
 
@@ -22,9 +19,9 @@ public class PersonController {
         personService.addPerson(person);
     }
 
-    @GetMapping
-    public String helloworld(){
-        return "hello world";
+    @PostMapping("/delete/{ssn}")
+    public void deletePersonByssn(@PathVariable("ssn") String ssn){
+        personService.deletePersonByssn(ssn);
     }
 
 }

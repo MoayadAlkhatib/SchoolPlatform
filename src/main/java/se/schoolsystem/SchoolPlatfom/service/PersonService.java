@@ -17,4 +17,8 @@ public class PersonService {
     public void addPerson(Person person){
         personRepository.save(person);
     }
+
+    public void deletePersonByssn(String ssn){
+        personRepository.deleteById(ssn);
+    }
 }
